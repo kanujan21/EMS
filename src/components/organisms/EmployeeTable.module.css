@@ -1,0 +1,115 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 800px;
+}
+
+.table th {
+  padding: 1rem var(--spacing-lg);
+  background-color: var(--surface-hover);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 1rem var(--spacing-lg);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: rgba(0,0,0,0.01);
+}
+
+[data-theme='dark'] .table tr:hover td {
+  background-color: rgba(255,255,255,0.02);
+}
+
+.employeeCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  gap: 0.25rem;
+}
+
+.contact span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.department, .role, .date {
+  color: var(--text-secondary);
+}
+
+.actions {
+  width: 120px;
+}
+
+.actionBtns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtns button {
+  color: var(--text-muted);
+}
+
+.actionBtns button:hover:nth-child(2) {
+  color: var(--error);
+}
+
+.actionBtns button:hover:nth-child(1) {
+  color: var(--primary);
+}

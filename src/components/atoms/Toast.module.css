@@ -1,0 +1,97 @@
+.toast {
+  position: relative;
+  min-width: 350px;
+  max-width: 450px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  pointer-events: auto;
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.2);
+}
+
+.show {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.hide {
+  transform: translateX(50px) scale(0.95);
+  opacity: 0;
+}
+
+.success {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.info {
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.success .icon { color: var(--success); }
+.error .icon { color: var(--error); }
+.info .icon { color: var(--primary); }
+
+.iconAnimate {
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--primary);
+}
+
+.accent-success { background: var(--success); }
+.accent-error { background: var(--error); }
+.accent-info { background: var(--primary); }
+
+.message {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  z-index: 1;
+}
+
+.closeBtn {
+  background: var(--surface-hover);
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  z-index: 1;
+}
+
+.closeBtn:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+  transform: scale(1.1);
+}

@@ -1,0 +1,14 @@
+.label {
+  display: inline-block;
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.required {
+  color: var(--error);
+  margin-left: 2px;
+}
