@@ -6,7 +6,7 @@ import Badge from '../atoms/Badge';
 import Icon from '../atoms/Icon';
 import Modal from '../organisms/Modal';
 import FormField from '../molecules/FormField';
-import { useNotification } from '../../context/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 import styles from './PayrollPage.module.css';
 
 interface PayrollRecord {

@@ -7,7 +7,7 @@ import SearchBar from '../molecules/SearchBar';
 import Modal from '../organisms/Modal';
 import ConfirmModal from '../organisms/ConfirmModal';
 import FormField from '../molecules/FormField';
-import { useNotification } from '../../context/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 import { mockEmployees, type Employee } from '../../types/employee';
 import styles from './EmployeesPage.module.css';
 

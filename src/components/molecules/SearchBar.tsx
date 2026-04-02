@@ -2,9 +2,7 @@ import React from 'react';
 import { Search } from 'lucide-react';
 import styles from './SearchBar.module.css';
 
-interface SearchBarProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const SearchBar: React.FC<SearchBarProps> = (props) => {
+const SearchBar: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => {
   return (
     <div className={styles.container}>
       <Search className={styles.icon} size={18} />

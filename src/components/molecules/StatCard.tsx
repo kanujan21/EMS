@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './StatCard.module.css';
 
-interface StatCardProps {
+export interface StatCardProps {
   label: string;
   value: string | number;
   icon: React.ReactNode;

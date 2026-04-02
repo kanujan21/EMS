@@ -2,11 +2,12 @@ import React from 'react';
 import { Users, Building2, Calendar, FileText, ArrowUpRight } from 'lucide-react';
 import PageHeader from '../molecules/PageHeader';
 import StatCard from '../molecules/StatCard';
+import type { StatCardProps } from '../molecules/StatCard';
 import Button from '../atoms/Button';
 import styles from './DashboardPage.module.css';
 
 const DashboardPage: React.FC = () => {
-  const stats = [
+  const stats: StatCardProps[] = [
     { label: 'Total Employees', value: '1,248', icon: <Users size={24} />, trend: { value: 12, isUp: true }, variant: 'primary' },
     { label: 'Departments', value: '14', icon: <Building2 size={24} />, variant: 'info' },
     { label: 'Pending Leaves', value: '25', icon: <Calendar size={24} />, trend: { value: 8, isUp: false }, variant: 'warning' },
@@ -21,8 +22,8 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className="fade-in">
-      <PageHeader 
-        title="Dashboard Overview" 
+      <PageHeader
+        title="Dashboard Overview"
         description="Welcome back, here's what's happening today."
         actions={
           <Button variant="primary" leftIcon={<ArrowUpRight size={18} />}>
@@ -30,10 +31,10 @@ const DashboardPage: React.FC = () => {
           </Button>
         }
       />
-      
+
       <div className={styles.statsGrid}>
         {stats.map((stat, index) => (
-          <StatCard key={index} {...stat as any} />
+          <StatCard key={index} {...stat} />
         ))}
       </div>
 

@@ -6,7 +6,7 @@ import Badge from '../atoms/Badge';
 import Modal from '../organisms/Modal';
 import ConfirmModal from '../organisms/ConfirmModal';
 import FormField from '../molecules/FormField';
-import { useNotification } from '../../context/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 import { Plus, Briefcase, DollarSign, Edit2, Trash2, Search, Filter } from 'lucide-react';
 
 interface JobRole {

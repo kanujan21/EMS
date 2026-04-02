@@ -5,7 +5,7 @@ import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 import Label from '../atoms/Label';
 import FormField from '../molecules/FormField';
-import { useNotification } from '../../context/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 import styles from './LoginPage.module.css';
 
 const RegisterPage: React.FC = () => {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, BarChart2 } from 'lucide-react';
 import Button from '../atoms/Button';
 import FormField from '../molecules/FormField';
-import { useNotification } from '../../context/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 import styles from './LoginPage.module.css';
 
 const LoginPage: React.FC = () => {
@@ -20,12 +20,12 @@ const LoginPage: React.FC = () => {
     setIsLoading(true);
     setFormErrors({});
 
-    let errors: { email?: string; password?: string } = {};
-    
+    const errors: { email?: string; password?: string } = {};
+
     // Basic validation
     if (!email) errors.email = 'Email address is required';
     else if (!/\S+@\S+\.\S+/.test(email)) errors.email = 'Invalid email format';
-    
+
     if (!password) errors.password = 'Password is required';
     else if (password.length < 6) errors.password = 'Password must be at least 6 characters';
 
@@ -57,7 +57,7 @@ const LoginPage: React.FC = () => {
           <p className={styles.subtitle}>
             Enter your credentials to access your management dashboard.
           </p>
-          
+
           <form className={styles.form} onSubmit={handleLogin}>
             <FormField
               label="Email Address"
@@ -69,7 +69,7 @@ const LoginPage: React.FC = () => {
               error={formErrors.email}
               required
             />
-            
+
             <div className={styles.passwordWrapper}>
               <FormField
                 label="Password"
@@ -81,8 +81,8 @@ const LoginPage: React.FC = () => {
                 error={formErrors.password}
                 required
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className={styles.toggleBtn}
                 onClick={() => setShowPassword(!showPassword)}
                 tabIndex={-1}
@@ -90,31 +90,31 @@ const LoginPage: React.FC = () => {
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
-            
+
             <div className={styles.options}>
               <label className={styles.remember}>
                 <input type="checkbox" /> Remember me
               </label>
               <a href="#" className={styles.forgot}>Forgot password?</a>
             </div>
-            
-            <Button 
-              type="submit" 
-              fullWidth 
-              size="lg" 
+
+            <Button
+              type="submit"
+              fullWidth
+              size="lg"
               isLoading={isLoading}
               className={styles.submitBtn}
             >
               Sign In
             </Button>
           </form>
-          
+
           <div className={styles.footer}>
             Don't have an account? <a href="#">Contact HR</a>
           </div>
         </div>
       </div>
-      
+
       <div className={styles.right}>
         <div className={styles.overlay} />
         <div className={styles.infoBox}>
